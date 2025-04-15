@@ -338,6 +338,15 @@ function setModel(modelID = null){
         if(!model){            
             model = modelsList.find(m => m.id === defaultModel);
         }
+        
+        // Fallback if still undefined, shouldn't happen in normal conditions
+        if(!model){            
+            console.log("Model is undefined, no defaultModel found");
+            if(modelsList.length > 0) {
+                model = modelsList[0]; // Use the first model as fallback
+            }
+        }
+
     }
     else{
         model = modelsList.find(m => m.id === modelID);
