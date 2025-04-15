@@ -187,7 +187,20 @@ function addMessageToChatlog(messageObj, isFromServer = false){
         const threadElement = threadTemplate.content.cloneNode(true);
         threadDiv = threadElement.querySelector('.thread');
         threadDiv.classList.add('branch');
-        threadDiv.querySelector('.model-selector-label').innerHTML = activeModel.label;
+        
+        // Check if activeModel isn't undefined
+        if (activeModel) {
+            threadDiv.querySelector('.model-selector-label').innerHTML = activeModel.label;
+        } else {
+            console.log("Warning: activeModel is undefined");
+            // Fallback
+            if (typeof modelsList !== 'undefined' && modelsList.length > 0) {
+                activeModel = modelsList[0];
+                console.log("Set to first model as fallback: ", activeModel.id);
+                threadDiv.querySelector('.model-selector-label').innerHTML = activeModel.label;
+            }
+        }
+
 
         if(messageObj.message_id){
             threadDiv.id = messageObj.message_id.split('.')[0];
