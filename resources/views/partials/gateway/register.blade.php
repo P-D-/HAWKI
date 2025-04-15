@@ -53,8 +53,8 @@
         
         <div class="slide" data-index="5">
             <h1>{{ $translation["Reg_SL5_H"] }}</h1>
-            <input placeholder="{{  $translation["Reg_SL5_PH1"] }}" id="passkey-input" type="password">
-            <input placeholder="{{  $translation["Reg_SL5_PH2"] }}" id="passkey-repeat" type="password" class="top-gap-2" style="display:none">
+            <input placeholder="{{  $translation["Reg_SL5_CreateKey"] }}" id="passkey-input" type="password">
+            <input placeholder="{{  $translation["Reg_SL5_RepeatKey"] }}" id="passkey-repeat" type="password" class="top-gap-2" style="display:none">
             <p class="slide-subtitle top-gap-2">
                 {!! $translation["Reg_SL5_T"] !!}
             </p>
@@ -70,7 +70,12 @@
             <p class="slide-subtitle top-gap-2">
                 {{ $translation["Reg_SL6_T"] }}
             </p>
-            <div class="backup-hash-row">
+            <div class="slide-content">
+                <p>
+                    {{ $translation["Reg_SL6_T"] }}
+                </p>
+            </div>            
+            <div class="backup-hash-row top-gap-2">
                 <h3 id="backup-hash" class="demo-hash"></h3>
                 <button class="btn-sm border" onclick="downloadTextFile()">
                     <x-icon name="download"/>
