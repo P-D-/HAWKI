@@ -149,7 +149,7 @@ function downloadTextFile() {
     
     // Create a URL for the Blob and set it as the href attribute
     link.href = URL.createObjectURL(blob);
-    link.download = `${userInfo.username}_Key.txt`; // Set the download attribute with the filename
+    link.download = `${userInfo.username}_Recovery_Code.txt`; // Set the download attribute with the filename
     
     // Append the link to the document body (won't be visible to the user)
     document.body.appendChild(link);
