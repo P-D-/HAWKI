@@ -119,7 +119,7 @@ class AuthenticationController extends Controller
     
             $user = User::where('username', $authenticatedUserInfo['username'])->first();
     
-            if($user && $user->isRemoved === 0){
+            if($user && $user->isRemoved === false){
                 Auth::login($user);
                 return redirect('/handshake');
             }
